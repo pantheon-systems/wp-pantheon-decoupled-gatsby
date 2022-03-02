@@ -12,9 +12,15 @@
  * @package         Pantheon_Decoupled
  */
 
-register_activation_hook( __FILE__, 'pantheon_decoupled_gatsby_enable_deps' );
+function pantheon_decoupled_gatsby_activate() {
+  if (get_option( 'pantheon_decoupled_gatsby_activated' ) !== 1 ) {
+      return;
+  } else {
+    activate_plugin( 'pantheon-decoupled/pantheon-decoupled.php' );
+    activate_plugin( 'wp-gatsby/wp-gatsby.php' );
 
-function pantheon_decoupled_gatsby_enable_deps() {
-  activate_plugin( 'pantheon-decoupled/pantheon-decoupled.php' );
-  activate_plugin( 'wp-gatsby/wp-gatsby.php' );
+    update_option( 'pantheon_decoupled_gatsby_activated', 1 );
+  }
 }
+
+add_action( 'init', 'pantheon_decoupled_gatsby_activate' );
