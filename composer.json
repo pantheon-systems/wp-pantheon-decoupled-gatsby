@@ -6,7 +6,7 @@
     "wpackagist-plugin/wp-gatsby": "^2.0",
     "pantheon-systems/pantheon-decoupled": "*"
   },
-  "license": "GPLv3",
+  "license": "GPLv2",
   "authors": [
     {
       "name": "Brian Perry",
