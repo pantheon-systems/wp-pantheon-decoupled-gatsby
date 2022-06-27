@@ -16,7 +16,6 @@ require_once(ABSPATH . 'wp-admin/includes/plugin.php');
 
 function pantheon_decoupled_gatsby_activate() {
   if (get_option('pantheon_decoupled_gatsby_activated') !== 1) {
-    activate_plugin('pantheon-decoupled/pantheon-decoupled.php');
     activate_plugin('wp-gatsby/wp-gatsby.php');
 
     update_option('pantheon_decoupled_gatsby_activated', 1);
