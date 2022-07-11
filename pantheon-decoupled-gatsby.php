@@ -17,7 +17,6 @@ function pantheon_decoupled_gatsby_activate() {
 	if (!get_transient('pantheon_decoupled_gatsby_activated')) {
 		activate_plugin('pantheon-decoupled/pantheon-decoupled.php');
 		activate_plugin('wp-gatsby/wp-gatsby.php');
-		activate_plugin('wp-graphql/wp-graphql.php');
 
 		set_transient('pantheon_decoupled_gatsby_activated', true);
 	} else {
